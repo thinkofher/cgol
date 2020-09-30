@@ -1,5 +1,6 @@
-src = $(wildcard *.c)
-obj = $(src:.c=.o)
+src := $(wildcard *.c)
+src += $(wildcard src/*.c)
+obj := $(src:.c=.o)
 
 CC = gcc
 FLAGS = -fdiagnostics-color -pedantic

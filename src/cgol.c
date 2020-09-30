@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #define STB_DS_IMPLEMENTATION
-#include "libs/stb_ds.h"
+#include "../libs/stb_ds.h"
 
 #include "cgol.h"
 
