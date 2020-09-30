@@ -1,5 +1,6 @@
 #include <signal.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -17,7 +18,6 @@
 
 #include "cgol.h"
 
-
 static volatile int keep_running = 1;
 
 void stop_running(int dummy) { keep_running = 0; }
@@ -26,7 +26,15 @@ int main(int argc, char **argv) {
   srand(time(NULL));
   signal(SIGINT, stop_running);
 
-  cgol_life_matrix *matrix = cgol_life_matrix_new(30, 30);
+  if (argc != 3) {
+    printf("Provide width and height as command line arguments.\n");
+    return 1;
+  }
+
+  int width = atoi(argv[1]);
+  int height = atoi(argv[2]);
+
+  cgol_life_matrix *matrix = cgol_life_matrix_new(height, width);
   cgol_life_matrix_rand(matrix);
 
   while (keep_running) {
