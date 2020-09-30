@@ -8,7 +8,7 @@
 
 /* cgol_life methods */
 
-char cgol_life_show(cgol_life l) { return l ? 'o' : ' '; }
+char cgol_life_show(cgol_life l) { return l ? '*' : ' '; }
 
 cgol_life cgol_life_advance(cgol_life l, int neighbours) {
   if (l && (neighbours == 2 || neighbours == 3))
