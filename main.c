@@ -12,7 +12,7 @@
 #else
 
 #include <unistd.h>
-#define clear() (system("clear"))
+#define clear() (printf("%c[2J%c[1;1H", 27, 27))
 
 #endif
 
