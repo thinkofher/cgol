@@ -1,5 +1,4 @@
-src := $(wildcard *.c)
-src += $(wildcard src/*.c)
+src := $(wildcard src/*.c)
 obj := $(src:.c=.o)
 
 CC = gcc

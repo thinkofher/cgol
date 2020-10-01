@@ -16,7 +16,7 @@
 
 #endif
 
-#include "src/cgol.h"
+#include "cgol.h"
 
 static volatile int keep_running = 1;
 
