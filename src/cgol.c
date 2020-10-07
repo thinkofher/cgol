@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 #define STB_DS_IMPLEMENTATION
-#include "../libs/stb_ds.h"
+#include "../include/stb_ds.h"
 
-#include "cgol.h"
+#include "../include/cgol.h"
 
 /* cgol_life methods */
 
