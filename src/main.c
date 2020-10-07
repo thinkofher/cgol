@@ -64,18 +64,20 @@ int main(int argc, char **argv) {
   SDL_Renderer *r = NULL;
 
   if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-    fprintf(stderr, "SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+    fprintf(stderr, "SDL could not initialize! SDL_Error: %s\n",
+            SDL_GetError());
   } else {
-    window = SDL_CreateWindow("Game of Life", SDL_WINDOWPOS_UNDEFINED,
+    window = SDL_CreateWindow("cgol", SDL_WINDOWPOS_UNDEFINED,
                               SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH,
                               SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     if (window == NULL) {
-      fprintf(stderr, "Window could not be created! SDL_Error: %s\n", SDL_GetError());
+      fprintf(stderr, "Window could not be created! SDL_Error: %s\n",
+              SDL_GetError());
     } else {
       r = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
       if (r == NULL) {
         fprintf(stderr, "Renderer could not be created! SDL Error: %s\n",
-               SDL_GetError());
+                SDL_GetError());
       }
 
       screen_surface = SDL_GetWindowSurface(window);
