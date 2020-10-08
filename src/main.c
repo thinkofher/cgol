@@ -48,6 +48,7 @@ void cgol_life_matrix_show_sdl(cgol_life_matrix *m, SDL_Renderer *r) {
 }
 
 static volatile bool keep_running = true;
+static volatile bool stop = false;
 
 void stop_running(int dummy) { keep_running = false; }
 
@@ -96,6 +97,9 @@ int main(int argc, char **argv) {
         switch (e.key.keysym.sym) {
         case SDLK_SPACE:
           cgol_life_matrix_rand(matrix);
+          break;
+        case SDLK_s:
+          stop = !stop;
           break;
         case SDLK_ESCAPE:
           keep_running = false;
