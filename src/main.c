@@ -104,6 +104,10 @@ int main(int argc, char **argv) {
         case SDLK_c:
           cgol_life_matrix_clean(matrix);
           break;
+        case SDLK_n:
+          if (stop)
+            cgol_life_matrix_advance(matrix);
+          break;
         case SDLK_q:
         case SDLK_ESCAPE:
           keep_running = false;
@@ -124,7 +128,8 @@ int main(int argc, char **argv) {
     SDL_RenderPresent(r);
     SDL_Delay(DELAY);
 
-    cgol_life_matrix_advance(matrix);
+    if (!stop)
+      cgol_life_matrix_advance(matrix);
   }
 
   cgol_life_matrix_free(matrix);
