@@ -101,6 +101,9 @@ int main(int argc, char **argv) {
         case SDLK_s:
           stop = !stop;
           break;
+        case SDLK_c:
+          cgol_life_matrix_clean(matrix);
+          break;
         case SDLK_ESCAPE:
           keep_running = false;
           break;
