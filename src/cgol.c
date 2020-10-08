@@ -119,6 +119,12 @@ void cgol_life_matrix_copy(cgol_life_matrix *src, cgol_life_matrix *dst) {
   }
 }
 
+void cgol_life_matrix_clean(cgol_life_matrix *m) {
+  for (int i = 0; i < stbds_hmlen(m->hash); i++) {
+    m->hash[i].value = cgol_life_dead;
+  }
+}
+
 void cgol_life_matrix_free(cgol_life_matrix *m) {
   stbds_hmfree(m->hash);
   free(m);

@@ -29,4 +29,5 @@ void cgol_life_matrix_rand(cgol_life_matrix *m);
 void cgol_life_matrix_advance(cgol_life_matrix *m);
 void cgol_life_matrix_show(cgol_life_matrix *m);
 void cgol_life_matrix_copy(cgol_life_matrix *src, cgol_life_matrix *dst);
+void cgol_life_matrix_clean(cgol_life_matrix *m);
 void cgol_life_matrix_free(cgol_life_matrix *m);
